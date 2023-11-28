@@ -1,0 +1,152 @@
+html,
+body {
+  margin: 0;
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
+}
+
+#create-page {
+  border: solid 5px black;
+  width: 56ch;
+  margin: 10rem auto;
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 500px;
+}
+
+// Applies to the two titles on create screen
+.create-title {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#dropdown:first-of-type(input) {
+  height: 50px;
+  margin-bottom: 2rem;
+}
+
+#dropdown {
+  padding: 10px;
+  border: solid 3px black;
+  border-radius: 5px;
+
+  select {
+    height: 50px;
+    width: 100%;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 2px;
+  }
+}
+
+#create-pet-container {
+  padding: 10px;
+  border: solid 3px black;
+  border-radius: 5px;
+}
+
+form {
+  // margin-top: 1rem;
+}
+
+#create-radio-outer-container {
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+}
+
+#create-radio-inner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create-radio-img-container {
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
+
+/* Page: create */
+
+// label {
+//   font-size: 18px;
+// }
+
+picture {
+  width: 25px;
+  height: 25px;
+}
+
+// img {
+//   width: 100%;
+// }
+
+form input {
+  display: block;
+  height: 50px;
+  width: 100%;
+}
+
+form input[type='radio'] {
+  height: 1rem;
+  width: 1rem;
+}
+
+form button {
+  display: block;
+  height: 50px;
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  /* justify-content: space-between; */
+  margin: 1rem 0;
+}
+
+fieldset div {
+  flex-grow: 1;
+}
+
+#pet-container-selection {
+  display: flex;
+}
+
+/* Pet Page */
+#pet-page {
+  border: solid 2px black;
+  padding: 16px;
+  width: 55ch;
+  margin: 10rem auto;
+
+  #pet-pic-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+progress[value] {
+  appearance: none;
+  height: 50px;
+  width: 100%;
+  border-radius: 7px;
+  border: aqua;
+}
+#pet-page button {
+  height: 50px;
+  background-color: rgb(3, 122, 126);
+  color: black;
+  font-size: 18px;
+  width: 100%;
+}

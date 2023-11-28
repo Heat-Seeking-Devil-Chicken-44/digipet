@@ -3,18 +3,22 @@ import StatusBar from './StatusBar';
 import Dropdown from './Dropdown';
 import { useState, useEffect } from 'react';
 import shark from '../assets/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg';
+// import shark from '../dist/images/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg';
 import redlip from '../assets/red-lipped.jpeg';
 import crab from '../assets/yeti-crab-prints Medium.jpeg';
-
+// dist/images/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg
 function PetPage() {
   const [source, setSource] = useState('');
   const [loading, setLoading] = useState(true);
 
+  //at render the page will fetch and load image from database
   useEffect(() => {
+    //declare variable url assign it the value of current url
     let url = window.location.href;
-    console.log('URL------>', url);
+    console.log('url', url);
+    console.log('url.lastIndexOf', url.lastIndexOf('/') + 1);
     let id = url.substring(url.lastIndexOf('/') + 1);
-    console.log('id------>', id);
+    console.log('id', id);
 
     fetch(`http://localhost:3000/create/pets/${id}`, {
       method: 'GET',
@@ -22,9 +26,7 @@ function PetPage() {
     })
       .then((pet) => pet.json())
       .then((parsedPet) => {
-        console.log('source before: ', source);
         setSource(getPetImages(parsedPet.picture));
-        console.log('source after: ', source);
       })
       .catch((error) => {
         console.log('Error fetching', error);
@@ -44,21 +46,21 @@ function PetPage() {
       case 'batfish':
         return redlip;
       default:
-        return ''; // You might want to provide a default image or handle this case differently
+        return 'adfadfd';
     }
   }
 
   return (
     <div id="pet-page">
-      <Dropdown />
-      <StatusBar />
-      <picture>
+      <div id="pet-pic-container">
         <img
-          src={source}
+          src={`${shark}`}
           alt="shark"
           style={{ width: '100px', height: '100px' }}
         />
-      </picture>
+      </div>
+      <Dropdown />
+      <StatusBar />
     </div>
   );
 }

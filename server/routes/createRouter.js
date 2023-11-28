@@ -1,7 +1,13 @@
 const express = require('express');
+const path = require('path');
 const petController = require('../controller/controller');
 
 const router = express.Router();
+
+// serve index.html on the route for /create
+router.get('/', (req, res) => {
+	return res.status(200).sendFile(path.join(__dirname, '../src/index.html'));
+});
 
 router.get('/pets', petController.getPets, (req, res) => {
 	// console.log('made it to api', res.locals.getPets);
