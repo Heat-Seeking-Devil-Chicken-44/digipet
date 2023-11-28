@@ -22,7 +22,9 @@ function PetPage() {
     })
       .then((pet) => pet.json())
       .then((parsedPet) => {
+        console.log('source before: ', source);
         setSource(getPetImages(parsedPet.picture));
+        console.log('source after: ', source);
       })
       .catch((error) => {
         console.log('Error fetching', error);
@@ -35,6 +37,7 @@ function PetPage() {
   function getPetImages(petPictures) {
     switch (petPictures) {
       case 'shark':
+        console.log('shark img var: ', shark);
         return shark;
       case 'crab':
         return crab;
