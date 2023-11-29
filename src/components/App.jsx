@@ -18,4 +18,17 @@ function App() {
   );
 }
 
+function App2() {
+  const [page, changePage] = useState('mainPage');
+
+  renderedPage =
+    page === 'mainPage' ? (
+      <MainPage changePage={changePage} />
+    ) : (
+      <OtherPage changePage={changePage} />
+    );
+
+  return { renderedPage };
+}
+
 export default App;
