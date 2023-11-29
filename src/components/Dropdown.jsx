@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import { Navigate } from 'react-router';
 
 function Dropdown() {
   const navigate = useNavigate(); //redirect to pet page if selecting an already made pet
@@ -21,11 +22,24 @@ function Dropdown() {
 
   function goToPetPage() {
     let petNames = document.getElementById('pet-names');
+    console.log('petNames', petNames);
     let id = petNames.options[petNames.selectedIndex].id;
-    console.log('id', id);
+    // console.log('id', id);
 
-    // console.log('current target', /currentTarget)
     navigate(`/petpage/${id}`);
+    
+  }
+
+  // const dataEl = dropdownData.map((pet) =>{
+  //   return (
+  //     <option id={pet._id}>{pet.name}</option>
+  //   )
+  // })
+  let dataEl; 
+  if(Array.isArray(dropdownData)){
+    dataEl = dropdownData.map((pet) =>{
+      return <option id={pet._id}>{pet.name}</option>
+    })
   }
   return (
     <div id="dropdown">
@@ -34,9 +48,7 @@ function Dropdown() {
         Choose from the dropdown to see the status of an existing pet
       </label>
       <select onChange={goToPetPage} name="pet-names" id="pet-names">
-        {dropdownData.map((pet) => (
-          <option id={pet._id}>{pet.name}</option>
-        ))}
+        {dataEl}
       </select>
     </div>
   );
