@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const petController = require('../controller/controller');
+const petController = require('../controller/petController');
 
 const router = express.Router();
 
