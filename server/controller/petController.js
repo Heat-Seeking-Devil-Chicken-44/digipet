@@ -23,6 +23,7 @@ petController.getOnePet = (req, res, next) => {
   Pet.findById(id)
     .then((pet) => {
       res.locals.getOnePet = pet;
+      console.log('locals type', res.locals.getOnePet);
       return next();
     })
     .catch((error) => {
