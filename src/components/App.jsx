@@ -9,9 +9,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" Component={CreatePage} />
-        <Route exact path="/petpage" Component={PetPage} />
-        <Route exact path="/petpage/:id" Component={PetPage} />
+        <Route exact path='/' Component={CreatePage} />
+        <Route exact path='/petpage' Component={PetPage} />
+        <Route exact path='/petpage/:id' Component={PetPage} />
         {/* <Route exact path='/login' Component={LoginPage} */}
       </Routes>
     </Router>

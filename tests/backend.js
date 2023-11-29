@@ -5,16 +5,18 @@
 const request = require('supertest');
 const fs = require('fs');
 //require in path
+
 const path = require('path');
 const server = 'http://localhost:3000';
-const petController = require('../controller/petController');
+const petController = require('../server/controller/petController.js');
 
 //invoke describe func for 'petController tests'
 describe('Route integration', () => {
   //tests requests to '/'
+  //make sure server is running
   describe('/', () => {
     //test get requests to '/'
-    desribe('GET', () => {
+    describe('GET', () => {
       //define test case for 200 response status and desired content type
       it('responds with 200 status and text/html content type', () => {
         //use supertest request function to request response for server
@@ -31,6 +33,7 @@ describe('Route integration', () => {
     });
   });
   //tests to '/pets'
+  //what do we want out of this big test? test any endpoint that goes to pets
   describe('/pets', () => {
     //tests get requests to '/pets'
     describe('GET', () => {
@@ -52,8 +55,8 @@ describe('Route integration', () => {
     describe('GET', () => {
       it('responds with 200 status and application/json content type', () => {
         return request(server)
-          .get('/pets:id')
-          .expects('Content-Type', /application\/json/)
+          .get('/pets')
+          .expect('Content-Type', /application\/json/)
           .expect(200);
       });
     });
@@ -67,27 +70,34 @@ describe('Route integration', () => {
             picture: 'testPicture',
           },
         ];
-
-        await request(server).post('/pets').setEncoding(pets);
+        //make a post request to the /pets endpoint and send the pets data
+        await request(server).post('/pets').send(pets);
       });
       //define test case, we want 200 status and app/json
       it('responds with 200 status and application/json content type', () => {
         //return request from server
+        const pets = [
+          {
+            name: 'test',
+            picture: 'testPicture',
+          },
+        ];
+
         return (
           request(server)
             //handle post requests to post
             .post('/pets')
+            .send(pets)
             //expect content to be app/json
             .expect('Content-Type', /application\/json/)
-            //
+            //expect 200 status response
             .expect(200)
         );
       });
-      it('responds with the updated market list', () => {});
+      it('responds with the updated pet list', () => {});
 
       it('responds to invalid request with 400 status and error message in body', () => {});
     });
     // describe('PATCH', () => {})
   });
 });
-//
