@@ -27,6 +27,12 @@ function Dropdown() {
     // console.log('current target', /currentTarget)
     navigate(`/petpage/${id}`);
   }
+  let dataEl;
+  if (Array.isArray(dropdownData)) {
+    dataEl = dropdownData.map((pet) => {
+      return <option id={pet._id}>{pet.name}</option>;
+    });
+  }
   return (
     <div id="dropdown">
       <div class="create-title">Check on your current pets!</div>
@@ -34,9 +40,7 @@ function Dropdown() {
         Choose from the dropdown to see the status of an existing pet
       </label>
       <select onChange={goToPetPage} name="pet-names" id="pet-names">
-        {dropdownData.map((pet) => (
-          <option id={pet._id}>{pet.name}</option>
-        ))}
+        {dataEl}
       </select>
     </div>
   );
