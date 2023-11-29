@@ -1,7 +1,7 @@
 {
-  "name": "scratch-project-pet",
+  "name": "iteration-project-digipet",
   "version": "1.0.0",
-  "description": "Team Goblin Shark's scratch project.",
+  "description": "Team Heat-Seeking Devil Chicken's iteration on Goblin Shark's scratch project.",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node server/server.js",
