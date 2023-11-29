@@ -54,7 +54,7 @@ petController.postPet = (req, res, next) => {
 petController.updatePet = (req, res, next) => {
   const { thirst, hunger, age, life } = req.body;
   const { id } = req.params;
-
+  console.log(req.body);
   // find the certain pet with the id and update
   // using findByIdAndUpdate method
   Pet.findByIdAndUpdate(id, { thirst, hunger, age, life }, { new: true })

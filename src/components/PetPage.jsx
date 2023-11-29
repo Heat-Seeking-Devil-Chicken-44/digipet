@@ -1,26 +1,21 @@
 import React from 'react';
 import StatusBar from './StatusBar';
-import Dropdown from './Dropdown';
+import PetPageDropdown from './PetPageDropdown';
+
 import { useState, useEffect } from 'react';
 import shark from '../assets/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg';
 // import shark from '../dist/images/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg';
 import redlip from '../assets/red-lipped.jpeg';
 import crab from '../assets/yeti-crab-prints Medium.jpeg';
 // dist/images/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg
-function PetPage() {
+
+function PetPage({ changePage, setPetId, petId }) {
   const [source, setSource] = useState('');
   const [loading, setLoading] = useState(true);
 
   //at render the page will fetch and load image from database
   useEffect(() => {
-    //declare variable url assign it the value of current url
-    let url = window.location.href;
-    console.log('url', url);
-    console.log('url.lastIndexOf', url.lastIndexOf('/') + 1);
-    let id = url.substring(url.lastIndexOf('/') + 1);
-    console.log('id', id);
-
-    fetch(`http://localhost:3000/create/pets/${id}`, {
+    fetch(`http://localhost:3000/create/pets/${petId}`, {
       method: 'GET',
       mode: 'cors',
     })
@@ -54,13 +49,17 @@ function PetPage() {
     <div id="pet-page">
       <div id="pet-pic-container">
         <img
-          src={`${shark}`}
-          alt="shark"
+          src={source}
+          alt={source}
           style={{ width: '100px', height: '100px' }}
         />
       </div>
-      <Dropdown />
-      <StatusBar />
+      <PetPageDropdown
+        changePage={changePage}
+        setPetId={setPetId}
+        petId={petId}
+      />
+      <StatusBar changePage={changePage} setPetId={setPetId} petId={petId} />
     </div>
   );
 }

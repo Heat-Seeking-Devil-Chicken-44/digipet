@@ -6,31 +6,27 @@ import PetPage from './PetPage.jsx';
 import styles from '../styles.scss';
 
 function App() {
-<<<<<<< HEAD
-  const [page, changePage] = useState('mainPage');
+  const [page, changePage] = useState('CreatePage');
+  const [petId, setPetId] = useState('');
 
   let renderedPage;
   switch (page) {
     case 'CreatePage': {
-      renderedPage = <CreatePage changePage={changePage} />;
+      renderedPage = (
+        <CreatePage changePage={changePage} setPetId={setPetId} petId={petId} />
+      );
+      break;
     }
     case 'PetPage': {
-      renderedPage = <PetPage changePage={changePage} />;
+      renderedPage = (
+        <PetPage changePage={changePage} setPetId={setPetId} petId={petId} />
+      );
+      break;
     }
+    default:
+      renderPage = <div>Page not found</div>;
   }
-  return { renderedPage };
-=======
-  return (
-    <Router>
-      <Routes>
-        <Route exact path='/' Component={CreatePage} />
-        <Route exact path='/petpage' Component={PetPage} />
-        <Route exact path='/petpage/:id' Component={PetPage} />
-        {/* <Route exact path='/login' Component={LoginPage} */}
-      </Routes>
-    </Router>
-  );
->>>>>>> dev
+  return <div>{renderedPage}</div>;
 }
 
 export default App;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
-function Dropdown({ changePage, setPetId, petId }) {
+function PetPageDropdown({ changePage, setPetId, petId }) {
   //redirect to pet page if selecting an already made pet
   console.log('this is changePage ', changePage);
   const [dropdownData, setDropdownData] = useState([]);
@@ -19,20 +19,9 @@ function Dropdown({ changePage, setPetId, petId }) {
   }, []);
 
   function goToPetPage(e) {
-    // let petNames = document.getElementById('pet-names');
-    // let id = petNames.options[petNames.selectedIndex].id;
-    // console.log('id', id);
-
-    // // console.log('current target', /currentTarget)
-    // navigate(`/petpage/${id}`);
-    // if (typeof changePage === 'function') {
-
     changePage('PetPage');
-    console.log(e.target);
-    console.log(e.target.options[e.target.selectedIndex].id);
     const selectedId = e.target.options[e.target.selectedIndex].id;
     setPetId(selectedId);
-    // }
   }
   let dataEl;
   if (Array.isArray(dropdownData)) {
@@ -57,4 +46,4 @@ function Dropdown({ changePage, setPetId, petId }) {
   );
 }
 
-export default Dropdown;
+export default PetPageDropdown;

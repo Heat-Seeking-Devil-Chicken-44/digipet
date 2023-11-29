@@ -6,7 +6,7 @@ import redlip from '../assets/red-lipped.jpeg';
 import crab from '../assets/yeti-crab-prints Medium.jpeg';
 
 //    event.preventDefault();
-function Form() {
+function Form({ changePage }) {
   const navigate = useNavigate();
   function handleContinue(e) {
     //get input from name input
@@ -29,7 +29,7 @@ function Form() {
       //THEN invoke react router for PetPage
       .then((response) => response.json())
       .then((data) => {
-        navigate(`/petpage/${data._id}`);
+        changePage('PetPage');
       })
       // .then(() => {
       //     fetch('http://localhost:8080/create/pets', {

@@ -24,21 +24,20 @@ app.use('/dist', express.static(path.resolve(__dirname, '../dist')));
 app.use('/assets', express.static(path.resolve(__dirname, '../src/assets')));
 // serve log-in.html on /
 
-app.get('/', (req, res) => {
-  return res
-    .status(200)
-    .sendFile(path.resolve(__dirname, '../client/index.html'));
-});
-
 // serve signup.html on /signup
-app.get('/signup', (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, '../client/signup.html'));
-});
+// app.get('/signup', (req, res) => {
+//   res.status(200).sendFile(path.resolve(__dirname, '../client/signup.html'));
+// });
 
 // handle api router
 app.use('/users', userRouter);
 app.use('/create', createRouter);
-// app.use('/petPage', petPageRouter);
+app.use('/petPage', petPageRouter);
+
+// serve up main frontend HTML file
+app.get('/', (req, res) => {
+  return res.status(200).sendFile(path.resolve(__dirname, '../src/index.html'));
+});
 
 // handle all route handler error for reqs (404)
 app.use((req, res) => res.status(404).send('this is not the right page'));

@@ -25,9 +25,18 @@ router.post('/', petController.postPet, (req, res) => {
 });
 
 //PATCH req
-router.patch('/pets/:id', petController.updatePet, (req, res) => {
-  res.status(200).json(res.locals.updatePet);
-});
+router.patch(
+  '/pets/:id',
+  (req, res, next) => {
+    console.log('made it to patch!');
+    next();
+  },
+  petController.updatePet,
+  (req, res) => {
+    res.status(200).json(res.locals.updatePet);
+    console.log('made it to patch router!');
+  }
+);
 
 //DELETE req
 router.delete('/pets/:id', petController.releasePet, (req, res) => {
