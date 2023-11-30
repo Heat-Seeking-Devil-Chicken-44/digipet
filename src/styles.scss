@@ -52,7 +52,7 @@ body {
 }
 
 #create-page {
-  // border: solid 5px purple;
+  border: solid 2px black;
   background-color: rgb(165, 146, 146, 0.95);
   width: 315px;
   height: 310px;
@@ -204,26 +204,41 @@ form input[type='radio'] {
 /* Pet Page */
 #pet-page {
   border: solid 2px black;
-  padding: 16px;
-  width: 55ch;
-  margin: 10rem auto;
+  background-color: rgb(165, 146, 146, 0.95);
+  border-radius: 15px;
+
+  padding: 5px;
 
   #pet-pic-container {
     display: flex;
     justify-content: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }
 progress[value] {
   appearance: none;
-  height: 50px;
-  width: 100%;
+  height: 25px;
+  width: 75%;
   border-radius: 7px;
   border: aqua;
+  justify-content: center;
 }
 #pet-page button {
-  height: 50px;
+  height: 25px;
   background-color: rgb(3, 122, 126);
   color: black;
+  justify-content: center;
   font-size: 18px;
-  width: 100%;
+  width: 75%;
+}
+
+.status-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -78,19 +78,13 @@ function StatusBar({ changePage, setPetId, petId }) {
   // render
 
   return (
-    <div>
-      <>
-        <span id="hunger">Hunger:</span>
-        <progress value={hunger} max="100"></progress>
-        <br />
-        <button onClick={handleFeedButton}>Feed</button>
-      </>
-      <>
-        <span id="thirst">Thirst:</span>
-        <progress value={thirst} max="100"></progress>
-        <br />
-        <button onClick={handleHydrateButton}>Hydrate</button>
-      </>
+    <div className="status-bar">
+      <span id="hunger">Hunger:</span>
+      <progress value={hunger} max="100"></progress>
+      <button onClick={handleFeedButton}>Feed</button>
+      <span id="thirst">Thirst:</span>
+      <progress value={thirst} max="100"></progress>
+      <button onClick={handleHydrateButton}>Hydrate</button>
     </div>
   );
 }
