@@ -28,7 +28,7 @@ const config = {
   },
   //specify testing enviornment for tests to run
   //need to test dom manipulation
-  testEnvironment: 'jsdom', //javascript document object model
+  // testEnvironment: 'jest-environment-jsdom-node', //javascript document object model
 
   testMatch: ['**/tests/**/*.[j]s?(x)', '**/?(*.)+(spec|test).[j]s?(x)'],
 

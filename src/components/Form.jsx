@@ -1,5 +1,4 @@
 import React from 'react';
-// import {withRouter} from 'react-router-dom'
 import { useNavigate } from 'react-router';
 import shark from '../assets/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg';
 import redlip from '../assets/red-lipped.jpeg';

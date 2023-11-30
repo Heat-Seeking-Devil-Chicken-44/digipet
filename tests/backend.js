@@ -55,7 +55,7 @@ describe('Route integration', () => {
     describe('GET', () => {
       it('responds with 200 status and application/json content type', () => {
         return request(server)
-          .get('/pets')
+          .get('/pets/one/:id')
           .expect('Content-Type', /application\/json/)
           .expect(200);
       });

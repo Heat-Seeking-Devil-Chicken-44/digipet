@@ -51,13 +51,19 @@ function Dropdown({ changePage, setPetId, petId }) {
         Choose from the dropdown to see the status of an existing pet
       </label>
       <select onChange={goToPetPage} name="pet-names" id="pet-names">
-        <option value="" disabled selected>
-          Select your pet...
-        </option>
+        <option value="">Select your pet...</option>
         {dataEl}
       </select>
     </div>
   );
 }
 
+//  <textarea
+// className="post-box-input"
+// placeholder="How are you feeling today?"
+// type="text"
+// id="item"
+// value={newJournal}
+// onChange={(e) => setNewJournal(e.target.value)}
+// />
 export default Dropdown;

@@ -6,6 +6,7 @@ function PetPageDropdown({ changePage, setPetId, petId }) {
   //redirect to pet page if selecting an already made pet
   console.log('this is changePage ', changePage);
   const [dropdownData, setDropdownData] = useState([]);
+  const [currentPetId, setCurrentPetId] = useState('');
 
   //get pets from DB for dropdown menu
   useEffect(() => {
@@ -26,8 +27,9 @@ function PetPageDropdown({ changePage, setPetId, petId }) {
   let dataEl;
   if (Array.isArray(dropdownData)) {
     dataEl = dropdownData.map((pet) => {
+      let isSelected = pet._id === petId ? true : false;
       return (
-        <option key={pet._id} id={pet._id}>
+        <option key={pet._id} id={pet._id} selected={isSelected}>
           {pet.name}
         </option>
       );
