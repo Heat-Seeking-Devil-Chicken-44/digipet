@@ -15,7 +15,7 @@ function PetPage({ changePage, setPetId, petId }) {
 
   //at render the page will fetch and load image from database
   useEffect(() => {
-    fetch(`http://localhost:3000/create/pets/${petId}`, {
+    fetch(`http://localhost:3000/pets/one/${petId}`, {
       method: 'GET',
       mode: 'cors',
     })
@@ -49,8 +49,8 @@ function PetPage({ changePage, setPetId, petId }) {
     <div id="pet-page">
       <div id="pet-pic-container">
         <img
-          src={source}
-          alt={source}
+          src={source.petId}
+          alt={source.petId}
           style={{ width: '100px', height: '100px' }}
         />
       </div>
@@ -58,6 +58,8 @@ function PetPage({ changePage, setPetId, petId }) {
         changePage={changePage}
         setPetId={setPetId}
         petId={petId}
+        //  src={source.petId}
+        //  alt={source.petId}
       />
       <StatusBar changePage={changePage} setPetId={setPetId} petId={petId} />
     </div>

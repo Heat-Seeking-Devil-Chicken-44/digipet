@@ -9,7 +9,7 @@ function PetPageDropdown({ changePage, setPetId, petId }) {
 
   //get pets from DB for dropdown menu
   useEffect(() => {
-    fetch('http://localhost:3000/create/pets', {
+    fetch('http://localhost:3000/pets/all', {
       method: 'GET',
     })
       .then((allPetsObjects) => allPetsObjects.json())

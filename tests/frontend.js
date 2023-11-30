@@ -1,6 +1,8 @@
 //import react
 import React from 'react';
-// const react = require('react');
+
+//testing chunk
+//// const react = require('react');
 //import react render
 const reactRender = require('react-router');
 //import reder, screen and wait for from testing library

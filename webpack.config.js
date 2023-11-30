@@ -20,7 +20,7 @@ module.exports = {
     //         logLevel: 'debug',
     //     }
     // }
-    proxy: { '/create': 'http://localhost:3000' },
+    proxy: { '/pets': 'http://localhost:3000' },
   },
   plugins: [
     new HTMLWebpackPlugin({

@@ -18,7 +18,7 @@ function Form({ changePage }) {
     petPicture = document.querySelector('input[name="petName"]:checked').value;
     console.log('petPicture: ', petPicture);
     //send this data on POST request body
-    fetch('http://localhost:3000/create', {
+    fetch('http://localhost:3000/pets/add', {
       method: 'POST',
       mode: 'cors',
       headers: {

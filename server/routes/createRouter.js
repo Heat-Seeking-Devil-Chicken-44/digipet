@@ -9,34 +9,27 @@ router.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-router.get('/pets', petController.getPets, (req, res) => {
+//
+router.get('/all', petController.getPets, (req, res) => {
   // console.log('made it to api', res.locals.getPets);
   return res.status(200).json(res.locals.getPets);
 });
 
-router.get('/pets/:id', petController.getOnePet, (req, res) => {
+router.get('/one/:id', petController.getOnePet, (req, res) => {
   return res.status(200).json(res.locals.getOnePet);
 });
 
 // POST req
 // router.post('/', petController.postPet, (req, res) => {
-router.post('/', petController.postPet, (req, res) => {
+router.post('/add', petController.postPet, (req, res) => {
   return res.status(200).json(res.locals.postPets);
 });
 
 //PATCH req
-router.patch(
-  '/pets/:id',
-  (req, res, next) => {
-    console.log('made it to patch!');
-    next();
-  },
-  petController.updatePet,
-  (req, res) => {
-    res.status(200).json(res.locals.updatePet);
-    console.log('made it to patch router!');
-  }
-);
+router.patch('/update/:id', petController.updatePet, (req, res) => {
+  res.status(200).json(res.locals.updatePet);
+  console.log('made it to patch router!');
+});
 
 //DELETE req
 router.delete('/pets/:id', petController.releasePet, (req, res) => {

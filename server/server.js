@@ -30,9 +30,16 @@ app.use('/assets', express.static(path.resolve(__dirname, '../src/assets')));
 // });
 
 // handle api router
+app.use('/pets', createRouter);
 app.use('/users', userRouter);
-app.use('/create', createRouter);
-app.use('/petPage', petPageRouter);
+
+// app.get('/pets/all', (req, res) => {
+//   return res.status(200).json(res.locals.getPets);
+// });
+
+// app.get('/pets/pic/:id', (req, res) => {
+//   return res.status(200).json(res.locals.getOnePet);
+// });
 
 // serve up main frontend HTML file
 app.get('/', (req, res) => {

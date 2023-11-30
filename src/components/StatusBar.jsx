@@ -22,7 +22,7 @@ function StatusBar({ changePage, setPetId, petId }) {
   // use the fetched value to update the state
   // decrement of hunger and thirst over time
   useEffect(() => {
-    fetch(`http://localhost:3000/create/pets/${petId}`)
+    fetch(`http://localhost:3000/pets/one/${petId}`)
       .then((data) => {
         return data.json();
       })
@@ -47,7 +47,7 @@ function StatusBar({ changePage, setPetId, petId }) {
   // update the server side values
   const updateServerValues = (updatedValues) => {
     console.log('id: ', petId);
-    fetch(`http://localhost:3000/create/pets/${petId}`, {
+    fetch(`http://localhost:3000/pets/update/${petId}`, {
       method: 'PATCH',
       mode: 'cors',
       headers: {
