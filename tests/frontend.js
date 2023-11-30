@@ -1,6 +1,6 @@
 //import react
 import React from 'react';
-
+/* @jest-environment jsdom*/
 //testing chunk
 //// const react = require('react');
 //import react render

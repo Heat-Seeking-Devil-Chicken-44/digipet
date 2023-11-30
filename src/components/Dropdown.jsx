@@ -58,12 +58,4 @@ function Dropdown({ changePage, setPetId, petId }) {
   );
 }
 
-//  <textarea
-// className="post-box-input"
-// placeholder="How are you feeling today?"
-// type="text"
-// id="item"
-// value={newJournal}
-// onChange={(e) => setNewJournal(e.target.value)}
-// />
 export default Dropdown;

@@ -48,7 +48,7 @@ function StatusBar({ changePage, setPetId, petId }) {
   // update the server side values
   const updateServerValues = (updatedValues) => {
     console.log('id: ', petId);
-    fetch(`http://localhost:3000/pets/update/${petId}`, {
+    fetch(`/pets/update/${petId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

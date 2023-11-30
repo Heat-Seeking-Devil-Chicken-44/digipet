@@ -2,6 +2,8 @@
 //require them in and assign to variables
 //use dotnotation to access specific functions
 //require in fs
+
+/* @jest-environment node*/
 const request = require('supertest');
 const fs = require('fs');
 //require in path
@@ -53,25 +55,40 @@ describe('Route integration', () => {
     });
 
     describe('GET', () => {
-      it('responds with 200 status and application/json content type', () => {
-        return request(server)
-          .get('/pets/one/:id')
+      it('responds with 200 status and application/json content type', async () => {
+        // let petId;
+        const pets = [
+          {
+            name: 'test',
+            picture: 'shark',
+          },
+        ];
+        // console.log('jason');
+        // console.log('server');
+        // petId = await request(server)
+        //   .post(`/pets/add`)
+        //   .send(pets)
+        //   .then((data) => console.log('data test', data));
+
+        // console.log('petId', petId);
+        const response = await request(server)
+          .get(`/pets/one/:id`)
           .expect('Content-Type', /application\/json/)
-          .expect(200);
+          .expect(200)
+          .expect(response.params)
+          .toEqual(response);
       });
     });
     //testing additions to database
     describe('POST', () => {
       //before each test, create mock database info
       beforeEach(async () => {
-        const pets = [
-          {
-            name: 'test',
-            picture: 'testPicture',
-          },
-        ];
+        const pets = {
+          name: 'test',
+          picture: 'testPicture',
+        };
         //make a post request to the /pets endpoint and send the pets data
-        await request(server).post('/pets/add').send(pets);
+        await request(server).post('/pets/add').send(JSON.stringify(pets));
       });
       //define test case, we want 200 status and app/json
       it('responds with 200 status and application/json content type', () => {
