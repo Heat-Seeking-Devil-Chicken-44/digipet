@@ -23,10 +23,9 @@ const config = {
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
-  globalSetup: "./jest-setup.js",
+  globalSetup: './jest-setup.js',
 
-  globalTeardown: "./jest-teardown.js",
-
+  globalTeardown: './jest-teardown.js',
 
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/mocks/fileMock.js',
@@ -57,11 +56,11 @@ const config = {
   // watchman: true,
 };
 
-"jest": {
-  
-  "testEnvironment": "jest-environment-jsdom",
-  "setupFilesAfterEnv": [
-    "@testing-library/jest-dom/extend-expect"
-  ]
-},
+// "jest": {
+//   "testEnvironment": "jest-environment-jsdom",
+//   "setupFilesAfterEnv": [
+//     "@testing-library/jest-dom/extend-expect"
+//   ]
+// }
+
 module.exports = config;
