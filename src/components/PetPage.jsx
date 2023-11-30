@@ -18,8 +18,13 @@ function PetPage({ changePage, setPetId, petId }) {
     fetch(`http://localhost:3000/pets/one/${petId}`, {
       method: 'GET',
       mode: 'cors',
+      credentials: 'include',
     })
-      .then((pet) => pet.json())
+      .then((pet) => {
+        console.log('pet', pet);
+
+        return pet.json();
+      })
       .then((parsedPet) => {
         setSource(getPetImages(parsedPet.picture));
       })
@@ -45,6 +50,9 @@ function PetPage({ changePage, setPetId, petId }) {
     }
   }
 
+  console.log('source', source);
+  console.log('sourceID', source.petId);
+
   return (
     <div id="pet-page">
       <div id="pet-pic-container">
@@ -58,8 +66,8 @@ function PetPage({ changePage, setPetId, petId }) {
         changePage={changePage}
         setPetId={setPetId}
         petId={petId}
-        //  src={source.petId}
-        //  alt={source.petId}
+        // src={source.petId}
+        // alt={source.petId}
       />
       <StatusBar changePage={changePage} setPetId={setPetId} petId={petId} />
     </div>
