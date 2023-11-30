@@ -56,36 +56,32 @@ describe('Route integration', () => {
 
     describe('GET', () => {
       it('responds with 200 status and application/json content type', async () => {
-        // let petId;
         const pets = [
           {
-            name: 'test',
-            picture: 'shark',
+            name: 'mckenzie',
+            picture: 'batfish',
           },
         ];
-        // console.log('jason');
-        // console.log('server');
-        // petId = await request(server)
-        //   .post(`/pets/add`)
-        //   .send(pets)
-        //   .then((data) => console.log('data test', data));
 
-        // console.log('petId', petId);
+        // Make the GET request to '/pets/one/:id'
         const response = await request(server)
-          .get(`/pets/one/:id`)
+          .get(`/pets/one/6568b5425117b74bb6df9b1b`) // Replace 'your_id_here' with an actual ID
           .expect('Content-Type', /application\/json/)
-          .expect(200)
-          .expect(response.params)
-          .toEqual(response);
+          .expect(200);
+
+        // Additional assertions for the response body or other details
+        expect(response.body).toBeDefined(); // Add more assertions as needed
+        expect(response.body._id).toEqual('6568b5425117b74bb6df9b1b');
       });
     });
+
     //testing additions to database
     describe('POST', () => {
       //before each test, create mock database info
       beforeEach(async () => {
         const pets = {
-          name: 'test',
-          picture: 'testPicture',
+          name: 'testaroo',
+          picture: 'crab',
         };
         //make a post request to the /pets endpoint and send the pets data
         await request(server).post('/pets/add').send(JSON.stringify(pets));
@@ -96,7 +92,7 @@ describe('Route integration', () => {
         const pets = [
           {
             name: 'test',
-            picture: 'testPicture',
+            picture: 'crab',
           },
         ];
 

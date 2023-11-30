@@ -23,18 +23,28 @@ const config = {
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
-  globalSetup: './jest-setup.js',
+  // globalSetup: './jest-setup.js',
 
-  globalTeardown: './jest-teardown.js',
+  // globalTeardown: './jest-teardown.js',
 
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/mocks/fileMock.js',
   },
+
+  moduleFileExtensions: ['js', 'jsx'],
   //specify testing enviornment for tests to run
   //need to test dom manipulation
-  // testEnvironment: 'jest-environment-jsdom', //javascript document object model
+  // testEnvironment: 'jest-environment-jsdom',
+  // testEnvironment: 'node',
 
-  testMatch: ['**/tests/**/*.[j]s?(x)', '**/?(*.)+(spec|test).[j]s?(x)'],
+  // testEnvironmentOptions: {
+  //   'jest-environment-jsdom': {
+  //     resources: 'usable',
+  //   },
+  // }, //javascript document object model
+  // setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+
+  testMatch: ['**/__tests__/**/*.[j]s?(x)', '**/?(*.)+(spec|test).[j]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ['/node_modules/'],
@@ -57,10 +67,10 @@ const config = {
 };
 
 // "jest": {
+//   "globalSetup": "./jest-setup.js",
+//   "globalTeardown": "./jest-teardown.js",
 //   "testEnvironment": "jest-environment-jsdom",
-//   "setupFilesAfterEnv": [
-//     "@testing-library/jest-dom/extend-expect"
-//   ]
-// }
+
+// },
 
 module.exports = config;
