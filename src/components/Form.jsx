@@ -5,9 +5,7 @@ import shark from '../assets/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg';
 import redlip from '../assets/red-lipped.jpeg';
 import crab from '../assets/yeti-crab-prints Medium.jpeg';
 
-//    event.preventDefault();
-function Form({ changePage }) {
-  const navigate = useNavigate();
+function Form({ changePage, setPetId, petId }) {
   function handleContinue(e) {
     //get input from name input
     e.preventDefault();
@@ -30,13 +28,10 @@ function Form({ changePage }) {
       .then((response) => response.json())
       .then((data) => {
         changePage('PetPage');
+        console.log(data._id);
+        setPetId(data._id);
       })
-      // .then(() => {
-      //     fetch('http://localhost:8080/create/pets', {
-      //         method: 'GET',
-      //         mode: 'cors'
-      //     })
-      // })
+
       .catch((error) => console.log('this is not working', error));
   }
 

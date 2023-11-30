@@ -26,16 +26,19 @@ const config = {
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/mocks/fileMock.js',
   },
-  testEnvironment: 'jsdom',
+  //specify testing enviornment for tests to run
+  //need to test dom manipulation
+  testEnvironment: 'jsdom', //javascript document object model
 
   testMatch: ['**/tests/**/*.[j]s?(x)', '**/?(*.)+(spec|test).[j]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ['/node_modules/'],
 
+  //specify how certain files should be transformed before they are tested
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.scss$': 'jest-transform-stub',
+    '^.+\\.jsx?$': 'babel-jest', //transform any js or jsx file with babel-jest
+    '^.+\\.scss$': 'jest-transform-stub', //transform scss with jest-transform-stub
   },
 
   transformIgnorePatterns: ['/node_modules/', '\\.pnp\\.[^\\/]+$', '\\.jpeg$'],

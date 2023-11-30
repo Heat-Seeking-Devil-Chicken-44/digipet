@@ -34,7 +34,7 @@ function PetPage({ changePage, setPetId, petId }) {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [petId]);
 
   function getPetImages(petPictures) {
     switch (petPictures) {
@@ -49,16 +49,14 @@ function PetPage({ changePage, setPetId, petId }) {
         return 'adfadfd';
     }
   }
-
   console.log('source', source);
-  console.log('sourceID', source.petId);
-
+  console.log('sourceId', source.petId);
   return (
     <div id="pet-page">
       <div id="pet-pic-container">
         <img
-          src={source.petId}
-          alt={source.petId}
+          src={source}
+          alt={source}
           style={{ width: '100px', height: '100px' }}
         />
       </div>

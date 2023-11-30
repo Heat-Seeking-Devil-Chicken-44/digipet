@@ -34,7 +34,7 @@ describe('Route integration', () => {
   });
   //tests to '/pets'
   //what do we want out of this big test? test any endpoint that goes to pets
-  describe('/pets', () => {
+  describe('/pets/all', () => {
     //tests get requests to '/pets'
     describe('GET', () => {
       //define test case, we want 200 status and app/json content type
@@ -43,7 +43,7 @@ describe('Route integration', () => {
         return (
           request(server)
             //at '/pets'
-            .get('/pets')
+            .get('/pets/all')
             //expect app/json
             .expect('Content-Type', /application\/json/)
             //expect 200 status
@@ -71,7 +71,7 @@ describe('Route integration', () => {
           },
         ];
         //make a post request to the /pets endpoint and send the pets data
-        await request(server).post('/pets').send(pets);
+        await request(server).post('/pets/add').send(pets);
       });
       //define test case, we want 200 status and app/json
       it('responds with 200 status and application/json content type', () => {
@@ -86,7 +86,7 @@ describe('Route integration', () => {
         return (
           request(server)
             //handle post requests to post
-            .post('/pets')
+            .post('/pets/add')
             .send(pets)
             //expect content to be app/json
             .expect('Content-Type', /application\/json/)

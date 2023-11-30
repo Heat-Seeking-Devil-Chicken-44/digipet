@@ -28,8 +28,8 @@ function Dropdown({ changePage, setPetId, petId }) {
     // if (typeof changePage === 'function') {
 
     changePage('PetPage');
-    console.log(e.target);
-    console.log(e.target.options[e.target.selectedIndex].id);
+    // console.log(e.target);
+    // console.log(e.target.options[e.target.selectedIndex].id);
     const selectedId = e.target.options[e.target.selectedIndex].id;
     setPetId(selectedId);
     // }
@@ -51,6 +51,9 @@ function Dropdown({ changePage, setPetId, petId }) {
         Choose from the dropdown to see the status of an existing pet
       </label>
       <select onChange={goToPetPage} name="pet-names" id="pet-names">
+        <option value="" disabled selected>
+          Select your pet...
+        </option>
         {dataEl}
       </select>
     </div>

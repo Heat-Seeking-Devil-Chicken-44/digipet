@@ -9,6 +9,7 @@ function StatusBar({ changePage, setPetId, petId }) {
 
   const handleFeedButton = () => {
     setHunger((prevHunger) => Math.min(prevHunger + 10, 100));
+    console.log(hunger);
     updateServerValues({ hunger: hunger + 10 });
   };
 
@@ -49,7 +50,6 @@ function StatusBar({ changePage, setPetId, petId }) {
     console.log('id: ', petId);
     fetch(`http://localhost:3000/pets/update/${petId}`, {
       method: 'PATCH',
-      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
