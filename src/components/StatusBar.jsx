@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { useParams } from 'react-router';
-
+import begging from '../assets/audio/begging.mp3';
+import gulp from '../assets/audio/gulp.mp3';
 function StatusBar({ changePage, setPetId, petId }) {
   // set states for both hunger and thirst
   const [hunger, setHunger] = useState(0);
@@ -8,16 +9,28 @@ function StatusBar({ changePage, setPetId, petId }) {
   // handle feed and hydrate button click
 
   const handleFeedButton = () => {
+    playSoundFeed();
     setHunger((prevHunger) => Math.min(prevHunger + 10, 100));
     console.log(hunger);
+
     updateServerValues({ hunger: hunger + 10 });
   };
 
   const handleHydrateButton = () => {
+    playSoundHydrate();
     setThirst((prevThirst) => Math.min(prevThirst + 10, 100));
     updateServerValues({ thirst: thirst + 10 });
   };
 
+  const playSoundHydrate = () => {
+    let audio = new Audio(gulp);
+    audio.play();
+  };
+
+  const playSoundFeed = () => {
+    let audio = new Audio(begging);
+    audio.play();
+  };
   // useEffect
   // fetch the initial values from the server/database
   // use the fetched value to update the state

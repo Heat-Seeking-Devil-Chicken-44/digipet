@@ -37,10 +37,11 @@ function Form({ changePage, setPetId, petId }) {
   return (
     <div id="create-pet-container">
       <form id="create pet">
-        <div className="create-title">Create a new pet!</div>
-        <label htmlFor="name">Pet's name</label>
-        <input type="text" id="name" />
-
+        <div id="name-input-container">
+          <div className="create-title">Create a new pet!</div>
+          <label htmlFor="name">Pet's name</label>
+          <input type="text" id="name" />
+        </div>
         <fieldset id="create-radio-outer-container">
           <div className="create-radio-inner-container">
             <div className="create-radio-img-container">
