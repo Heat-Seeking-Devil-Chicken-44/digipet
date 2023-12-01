@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import shark from '../assets/goblin_shark_puppy_by_tsaoshin_df0germ-pre.jpeg';
 import redlip from '../assets/red-lipped.jpeg';
 import crab from '../assets/yeti-crab-prints Medium.jpeg';
+import fifteenbucks from '../assets/audio/fifteenbucks.mp3';
 
 function Form({ changePage, setPetId, petId }) {
   function handleContinue(e) {
@@ -29,6 +30,9 @@ function Form({ changePage, setPetId, petId }) {
         changePage('PetPage');
         console.log(data._id);
         setPetId(data._id);
+        let audio = new Audio(fifteenbucks);
+        audio.volume = 0.5;
+        audio.play();
       })
 
       .catch((error) => console.log('this is not working', error));

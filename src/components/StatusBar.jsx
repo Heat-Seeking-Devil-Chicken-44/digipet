@@ -24,11 +24,13 @@ function StatusBar({ changePage, setPetId, petId }) {
 
   const playSoundHydrate = () => {
     let audio = new Audio(gulp);
+    audio.volume = 0.5;
     audio.play();
   };
 
   const playSoundFeed = () => {
     let audio = new Audio(begging);
+    audio.volume = 0.5;
     audio.play();
   };
   // useEffect
