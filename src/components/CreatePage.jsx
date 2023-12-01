@@ -3,13 +3,11 @@ import Form from './Form';
 import PetPage from './PetPage';
 import Dropdown from './Dropdown';
 
-function CreatePage() {
+function CreatePage({ changePage, setPetId, petId }) {
   return (
-    <div id='create-page'>
-      {/* <h1>From create page</h1> */}
-      <Dropdown />
-      <Form />
-      {/* <PetPage/> */}
+    <div id="create-page">
+      <Dropdown changePage={changePage} setPetId={setPetId} petId={petId} />
+      <Form changePage={changePage} setPetId={setPetId} petId={petId} />
     </div>
   );
 }

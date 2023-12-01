@@ -1,2 +1,4 @@
 # scratch-project-pet
+
 Team Goblin Shark's scratch project.
+I would like for you to take a step back and imagine if you will, close your eyes and allow yourself to be transported to another time in space. Still on this earth, still of this species, but not of this time. It is the mid 1800s and you are in stormy New England. You stumbled upon this README in some nightmare or fever dream. As you attempt to read the contents of this repository your brain suddenly begins to feel very sore. You scratch your head in puzzlement, but you can't take your eyes away from the screen. You dont even know what a screen is, but without even being able to think about what you're looking at your brain throbs and the veins upon your head grow till you think they might burst. Yet they dont and its at that moment you realize that you're brain is actually expanding. Growing to proportions you never

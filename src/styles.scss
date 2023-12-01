@@ -1,0 +1,246 @@
+html {
+  height: 1000px;
+  background-image: url('https://i5.walmartimages.com/asr/c9c9939b-98b0-4b33-8f96-6cea7b51216d.e84f917fc2773dd39734024155063473.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  // font-size: 18px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  // background-color: darkmagenta;
+  // width: 100vw;
+  // max-width: 100%;
+  //max-height: 100%;
+  // height: 100vh;
+  // background-color: rgb(160, 255, 255);
+  // background-image: url('https://i5.walmartimages.com/asr/c9c9939b-98b0-4b33-8f96-6cea7b51216d.e84f917fc2773dd39734024155063473.jpeg');
+  // //background-image: url('tamagotchi_cropped.jpg');
+  // background-size: 1500px;
+  //background-repeat: no-repeat;
+  //background-position: center;
+}
+
+#digipet-title {
+  margin-top: 250px;
+  margin-bottom: 50px;
+  color: rgb(198, 43, 212);
+  font-size: 80px;
+  letter-spacing: 0.23em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(43, 210, 235);
+  border-radius: 30px;
+}
+
+#root {
+  // margin-top: 385px;
+  // border: solid 5px red;
+  // background-color: rgb(165, 146, 146);
+  // width: 375px;
+  // height: 375px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#create-page {
+  border: solid 2px black;
+  background-color: rgb(165, 146, 146, 0.95);
+  width: 360px;
+  height: 335px;
+  // margin: 10rem auto;
+  // padding: 1rem;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: auto;
+  // height: 500px;
+}
+
+// Applies to the two titles on create screen
+.create-title {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+// #dropdown:first-of-type(input) {
+//   // height: 50px;
+//   // margin-bottom: 2rem;
+// }
+
+#dropdown {
+  // padding: 10px;
+  // border: solid 3px black;
+  border-bottom: 2px rgb(136, 132, 132);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  font-size: auto;
+  height: 35%;
+  select {
+    height: 75%;
+    width: 100%;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 2px;
+  }
+}
+
+#create-pet-container {
+  padding: 10px;
+  // border: solid 3px black;
+  border-radius: 15px;
+  height: 65%;
+
+  #name-input-container {
+    height: 40%;
+
+    #name {
+      height: 20px;
+    }
+  }
+
+  button {
+    height: 20px;
+    width: 100%;
+    border-radius: 15px;
+  }
+}
+
+// form {
+//   // margin-top: 1rem;
+// }
+
+#create-radio-outer-container {
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  // font-size: 18px;
+  height: 30%;
+
+  .create-radio-inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    height: 100%;
+    font-size: 11px;
+  }
+}
+
+.create-radio-img-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+}
+
+/* Page: create */
+
+label {
+  font-size: 11px;
+  text-align: center;
+}
+
+// picture {
+//   width: 25px;
+//   height: 25px;
+// }
+
+// img {
+//   width: 100%;
+// }
+
+form input {
+  display: block;
+  height: 50px;
+  width: 100%;
+}
+
+form input[type='radio'] {
+  height: 1rem;
+  width: 1rem;
+}
+
+// form button {
+//   display: block;
+//   height: 50px;
+//   width: 100%;
+// }
+
+// fieldset {
+//   border: none;
+//   display: flex;
+//   /* justify-content: space-between; */
+//   margin: 1rem 0;
+// }
+
+// fieldset div {
+//   flex-grow: 1;
+// }
+
+#pet-container-selection {
+  display: flex;
+}
+
+/* Pet Page */
+#pet-page {
+  border: solid 2px black;
+  background-color: rgb(165, 146, 146, 0.95);
+  border-radius: 15px;
+  width: 310px;
+
+  padding: 5px;
+
+  #pet-pic-container {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+progress[value] {
+  appearance: none;
+  height: 25px;
+  width: 75%;
+  border-radius: 7px;
+  border: aqua;
+  justify-content: center;
+}
+#pet-page button {
+  height: 25px;
+  background-color: rgb(3, 122, 126);
+  color: black;
+  justify-content: center;
+  font-size: 18px;
+  width: 75%;
+}
+
+.status-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
